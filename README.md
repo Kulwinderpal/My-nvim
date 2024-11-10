@@ -2,7 +2,7 @@
 ## Prerequisites
 Git,
 Neovim,
-A C Compiler Such as GCC or Clang
+and A C Compiler Such as GCC or Clang
 ## Windows
 
 On Windows run
