@@ -16,4 +16,4 @@ On Linux/Mac run
 ```
 git clone https://github.com/Kulwinderpal/My-nvim.git ~/.config/nvim && nvim
 ```
-Also Remove lines 4 and 5 in init.lua
+Also Remove lines 8 and 7 in init.lua
