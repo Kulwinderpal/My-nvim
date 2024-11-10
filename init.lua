@@ -1,3 +1,6 @@
+-- Improve Startup Times
+vim.loader.enable()
+
 -- Add Line Numbers
 vim.cmd "set number"
 
