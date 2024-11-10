@@ -1,7 +1,7 @@
 # Installation
 ## Prerequisites
-Git
-Neovim
+Git,
+Neovim,
 A C Compiler Such as GCC or Clang
 ## Windows
 
