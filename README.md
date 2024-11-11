@@ -1,8 +1,12 @@
 # Installation
 ## Prerequisites
-Git,
-Neovim,
-and A C Compiler Such as GCC or Clang
+Git
+
+Neovim
+
+A C Compiler Such as GCC or Clang
+
+A Nerd Font
 ## Windows
 
 On Windows run
