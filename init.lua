@@ -1,4 +1,4 @@
--- Improve Startup Times
+-- Improve Startup Time
 vim.loader.enable()
 
 -- Add Line Numbers
@@ -10,17 +10,17 @@ vim.o.shell = "pwsh.exe"
 -- Bootstrap lazy.nvim
 local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
 if not (vim.uv or vim.loop).fs_stat(lazypath) then
-	local lazyrepo = "https://github.com/folke/lazy.nvim.git"
-	local out = vim.fn.system({ "git", "clone", "--filter=blob:none", "--branch=stable", lazyrepo, lazypath })
-	if vim.v.shell_error ~= 0 then
-		vim.api.nvim_echo({
-			{ "Failed to clone lazy.nvim:\n", "ErrorMsg" },
-			{ out, "WarningMsg" },
-			{ "\nPress any key to exit..." },
-		}, true, {})
-		vim.fn.getchar()
-		os.exit(1)
-	end
+        local lazyrepo = "https://github.com/folke/lazy.nvim.git"
+        local out = vim.fn.system({ "git", "clone", "--filter=blob:none", "--branch=stable", lazyrepo, lazypath })
+        if vim.v.shell_error ~= 0 then
+                vim.api.nvim_echo({
+                        { "Failed to clone lazy.nvim:\n", "ErrorMsg" },
+                        { out, "WarningMsg" },
+                        { "\nPress any key to exit..." },
+                }, true, {})
+                vim.fn.getchar()
+                os.exit(1)
+        end
 end
 vim.opt.rtp:prepend(lazypath)
 
@@ -32,52 +32,58 @@ vim.g.maplocalleader = "\\"
 
 -- Add Your Plugins Here
 require("lazy").setup({
-	spec = {
-		{ "navarasu/onedark.nvim" },
-		{ "xiyaowong/transparent.nvim" },
-		{ "nvim-lualine/lualine.nvim", dependencies = "nvim-tree/nvim-web-devicons" },
-		{ "nvim-treesitter/nvim-treesitter", build = ":TSUpdate" },
-		{ "nvim-tree/nvim-tree.lua", dependencies = "nvim-tree/nvim-web-devicons" },
-		{	"nvim-telescope/telescope.nvim", tag = "0.1.8", dependencies = "nvim-lua/plenary.nvim"},
-		{ "akinsho/bufferline.nvim", version = "*", dependencies = "nvim-tree/nvim-web-devicons"},
-		{
-			"williamboman/mason.nvim",
-			dependencies = { "williamboman/mason-lspconfig.nvim", "neovim/nvim-lspconfig" }
-		},
-		{ "nvimtools/none-ls.nvim", dependencies = "nvim-lua/plenary.nvim" },
-		{
-			"hrsh7th/nvim-cmp", 
-			dependencies = { 
-				{ 'L3MON4D3/LuaSnip', build = "make install_jsregexp", version = "v2.*", dependencies = {
-				'saadparwaiz1/cmp_luasnip',
-					'rafamadriz/friendly-snippets',
-				} },
+        spec = {
+                { "navarasu/onedark.nvim" },
+                { "xiyaowong/transparent.nvim" },
+                { "nvim-lualine/lualine.nvim", dependencies = "nvim-tree/nvim-web-devicons" },
+                { "nvim-treesitter/nvim-treesitter", build = ":TSUpdate" },
+                { "nvim-tree/nvim-tree.lua", dependencies = "nvim-tree/nvim-web-devicons" },
+                {       "nvim-telescope/telescope.nvim", tag = "0.1.8", dependencies = "nvim-lua/plenary.nvim"},
+                { "akinsho/bufferline.nvim", version = "*", dependencies = "nvim-tree/nvim-web-devicons"},
+                {
+                        "williamboman/mason.nvim",
+                        dependencies = { "williamboman/mason-lspconfig.nvim", "neovim/nvim-lspconfig" }
+                },
+                { "nvimtools/none-ls.nvim", dependencies = "nvim-lua/plenary.nvim" },
+                {
+                        "hrsh7th/nvim-cmp",
+                        dependencies = {
+                                {
+                                        'L3MON4D3/LuaSnip',
+                                        build = "make install_jsregexp",
+                                        version = "v2.*",
+                                        dependencies = {
+                                'saadparwaiz1/cmp_luasnip',
+                                        'rafamadriz/friendly-snippets',
+                                }
+
+                                },
 
 
-			'neovim/nvim-lspconfig',
-				'hrsh7th/cmp-nvim-lsp',
-				'hrsh7th/cmp-buffer',
-				'hrsh7th/cmp-path',
-				'hrsh7th/cmp-cmdline'
-		},
-	},
-		{ "goolord/alpha-nvim", dependencies = "nvim-tree/nvim-web-devicons" },
+                        'neovim/nvim-lspconfig',
+                                'hrsh7th/cmp-nvim-lsp',
+                                'hrsh7th/cmp-buffer',
+                                'hrsh7th/cmp-path',
+                                'hrsh7th/cmp-cmdline'
+                },
+        },
+                { "goolord/alpha-nvim", dependencies = "nvim-tree/nvim-web-devicons" },
 },
-	-- colorscheme that will be used when installing plugins.
-	install = { colorscheme = { "onedark" } },
-	-- automatically check for plugin updates
-	checker = { enabled = true },
+        -- colorscheme that will be used when installing plugins.
+        install = { colorscheme = { "onedark" } },
+        -- automatically check for plugin updates
+        checker = { enabled = true },
 })
 
 -- Configure Plugins Here
 
 -- Configure and Enable onedark
 require("onedark").load({
-	style = "cool",
-	transparent = true,
-	lualine = {
-		transparent = true,
-	},
+        style = "cool",
+        transparent = true,
+        lualine = {
+                transparent = true,
+        },
 })
 
 -- Enable Transparency
@@ -88,25 +94,25 @@ require('transparent').clear_prefix('BufferLine')
 
 -- Enable and Configure Lualine
 require("lualine").setup({
-	icons_enabled = true,
-	icons_enabled = true,
-	theme = "onedark",
-	sections = {
-		lualine_a = { "mode" },
-		lualine_b = { "filename", "filetype" },
-		lualine_c = {},
-		lualine_x = {},
-		lualine_y = {},
-		lualine_z = { "location" },
-	},
+        icons_enabled = true,
+        icons_enabled = true,
+        theme = "onedark",
+        sections = {
+                lualine_a = { "mode" },
+                lualine_b = { "filename", "filetype" },
+                lualine_c = {},
+                lualine_x = {},
+                lualine_y = {},
+                lualine_z = { "location" },
+        },
 })
 
 -- Configure and Setup Treesitter
 require("nvim-treesitter.configs").setup({
-	ensure_installed = { "lua", "vim", "rust", "powershell", "c", "vimdoc" },
-	indent = { enable = true },
-	highlight = { enable = true },
-	auto_install = true,
+        ensure_installed = { "lua", "vim", "rust", "c", "vimdoc" },
+        indent = { enable = true },
+        highlight = { enable = true },
+        auto_install = true,
 })
 
 -- Configure and Setup Telescope
@@ -123,29 +129,34 @@ require("bufferline").setup({})
 
 -- Use and Configure Mason
 require("mason").setup({
-	ensure_installed = {
-		formatter = { "stylua" },
-	},
+        ensure_installed = {
+                formatter = { "stylua" },
+        },
 })
 require("mason-lspconfig").setup({
-	ensure_installed = { "lua_ls", "powershell_es", "rust_analyzer" },
+        ensure_installed = { "lua_ls", "powershell_es", "rust_analyzer" },
 })
 require("lspconfig").lua_ls.setup({
-	capabilities = capabilities
+        capabilities = capabilities
 })
 require("lspconfig").rust_analyzer.setup({
-	capabilities = capabilities
+        capabilities = capabilities
 })
 require("lspconfig").powershell_es.setup({
-	capabilities = capabilities
+        capabilities = capabilities
 })
 
+require("lspconfig").fsautocomplete.setup({
+        capabilities = capabilities
+})
 -- Use and Configure none-ls
 local null_ls = require("null-ls")
 null_ls.setup({
-	sources = {
-		null_ls.builtins.formatting.stylua,
-	},
+        sources = {
+                null_ls.builtins.formatting.stylua,
+                null_ls.builtins.formatting.fantomas,
+
+        },
 })
 vim.keymap.set("n", "<leader>gf", vim.lsp.buf.format, {})
 
@@ -157,7 +168,7 @@ vim.keymap.set("n", "<leader>gf", vim.lsp.buf.format, {})
       expand = function(args)
         require('luasnip').lsp_expand(args.body) -- For `luasnip` users.
       end,
-    },
+   },
     window = {
       -- completion = cmp.config.window.bordered(),
       -- documentation = cmp.config.window.bordered(),
@@ -171,13 +182,26 @@ vim.keymap.set("n", "<leader>gf", vim.lsp.buf.format, {})
     }),
     sources = cmp.config.sources({
       { name = 'nvim_lsp' },
-      { name = 'luasnip' }, -- For luasnip users.
+      { name = 'luasnip' },
     }, {
       { name = 'buffer' },
     })
   })
 require("luasnip.loaders.from_vscode").load()
 local capabilities = require('cmp_nvim_lsp').default_capabilities()
+    cmp.setup.cmdline(':', {
+      mapping = cmp.mapping.preset.cmdline(),
+      sources = cmp.config.sources({
+        { name = 'path' }
+      }, {
+        {
+          name = 'cmdline',
+          option = {
+            ignore_cmds = { 'Man', '!' }
+          }
+        }
+      })
+    })
 
 -- Use and Configure alpha
     local alpha = require("alpha")
