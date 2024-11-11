@@ -7,11 +7,12 @@ Neovim
 A C Compiler Such as GCC or Clang
 
 A Nerd Font
+
 ## Windows
 
 On Windows run
 ```
-git clone https://github.com/Kulwinderpal/My-nvim.git ~/AppData/local/nvim && nvim
+git clone https://github.com/Kulwinderpal/My-nvim.git %USERPROFILE%\AppData\Local\nvim && nvim
 ```
 
 ## Linux/Mac
