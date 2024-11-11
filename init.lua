@@ -68,6 +68,7 @@ require("lazy").setup({
                 },
         },
                 { "goolord/alpha-nvim", dependencies = "nvim-tree/nvim-web-devicons" },
+                { 'ThePrimeagen/vim-be-good' },
 },
         -- colorscheme that will be used when installing plugins.
         install = { colorscheme = { "onedark" } },
@@ -226,3 +227,6 @@ local capabilities = require('cmp_nvim_lsp').default_capabilities()
     }
 
     alpha.setup(dashboard.opts)
+
+-- Setup VimBeGood Keybindings
+vim.keymap.set('n', '<leader>vbg', ':VimBeGood<CR>')
