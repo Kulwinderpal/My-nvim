@@ -12,7 +12,7 @@ A Nerd Font
 
 On Windows run
 ```
-git clone https://github.com/Kulwinderpal/My-nvim.git %USERPROFILE%\AppData\Local\nvim && nvim
+git clone https://github.com/Kulwinderpal/My-nvim.git $ENV:%USERPROFILE%\AppData\Local\nvim && nvim
 ```
 
 ## Linux/Mac
