@@ -2,13 +2,14 @@ return {
 {
                         "williamboman/mason.nvim",
                         dependencies = { "williamboman/mason-lspconfig.nvim", "neovim/nvim-lspconfig" },
-		config = function ()
-require("mason").setup({
-        ensure_installed = { 
-		"stylua",
-		"clang-format",
-	}
-        })
+                opts = {
+                        ensure_installed = {
+                                "stylua",
+                                "clang-format"
+        }
+                },
+                config = function ()
+require("mason").setup({})
 require("mason-lspconfig").setup({
         ensure_installed = { "lua_ls", "powershell_es", "rust_analyzer", "clangd" },
 })
@@ -24,6 +25,6 @@ require("lspconfig").powershell_es.setup({
 require("lspconfig").clangd.setup({
         capabilities = capabilities
 })
-		end
+                end
  }
 }
