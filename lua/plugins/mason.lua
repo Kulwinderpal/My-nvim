@@ -18,6 +18,8 @@ return {
 					"rust_analyzer",
 					"lua_ls",
 					"ktlint",
+					"gopls",
+					"goimports",
 				},
 				auto_update = true,
 				run_on_start = true,
@@ -34,6 +36,19 @@ return {
 			})
 			require("lspconfig").kotlin_language_server.setup({
 				capabilities = capabilities,
+			})
+			require("lspconfig").gopls.setup({
+				capabilities = capabilities,
+				cmd = { "gopls" },
+				settings = {
+					gopls = {
+						completeUnimported = true,
+						usePlaceholders = true,
+						analyses = {
+							unusedparams = true,
+						},
+					},
+				},
 			})
 		end,
 	},
