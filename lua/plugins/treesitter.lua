@@ -11,6 +11,7 @@ return {
 					"rust",
 					"c",
 					"vimdoc",
+					"go",
 				},
 				indent = { enable = true },
 				highlight = { enable = true },
