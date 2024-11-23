@@ -13,11 +13,9 @@ return {
 				ensure_installed = {
 					"stylua",
 					"clang-format",
-					"kotlin-language-server",
 					"clangd",
 					"rust_analyzer",
 					"lua_ls",
-					"ktlint",
 					"gopls",
 					"goimports",
 				},
@@ -32,9 +30,6 @@ return {
 				capabilities = capabilities,
 			})
 			require("lspconfig").clangd.setup({
-				capabilities = capabilities,
-			})
-			require("lspconfig").kotlin_language_server.setup({
 				capabilities = capabilities,
 			})
 			require("lspconfig").gopls.setup({
