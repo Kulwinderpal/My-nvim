@@ -6,7 +6,6 @@ return {
 			require("nvim-treesitter.configs").setup({
 				ensure_installed = {
 					"lua",
-					"kotlin",
 					"vim",
 					"rust",
 					"c",
